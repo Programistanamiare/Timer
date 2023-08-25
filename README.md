@@ -8,7 +8,7 @@ To get this library you can clone it from repo:
 ``` 
 git clone "https://github.com/Programistanamiare/Timer.git"
 ```
-with included **examples** or take only header file with interface from <a href="https://github.com/Programistanamiare/Timer/tree/master/src">here</a>.
+with included **examples** or take only header file with interface from <a href="https://github.com/Programistanamiare/Timer/archive/refs/heads/features.zip">here</a>.
 
 ## How to use
 
