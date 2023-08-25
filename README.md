@@ -11,7 +11,8 @@ git clone "https://github.com/Programistanamiare/Timer.git"
 with included **examples** or take only header file with interface from <a href="https://github.com/Programistanamiare/Timer/tree/master/src">here</a>.
 
 ## How to use
-```
+
+```cpp
 #include "Timer.hpp"
 
 Timer t; // constructor
@@ -29,7 +30,7 @@ if ( t(100) )
 
 ## Example
 
-```
+```cpp
 #include "Timer.hpp"
 
 #define T1_INTERVAL 100
@@ -67,7 +68,32 @@ void loop()
 ```
 
 ## Documentation
-* ```Timer::Timer(unsigned long(*fun_ptr)(void) timer_function_reference = millis)``` constructor get reference to time function like **millis** or **micros**.
-* ```void Timer::updateTimer() ``` component function to update internal timer propertie according to time function given in the class constructor.
-* ```const uint64_t Timer::getTimer() const ``` constant component function to get time value from last **updateTimer()** function call.
-* ```bool Timer::operator() (const uint64_t& interval, const bool& auto_update_timer) ``` operator overload to get, when **current time - last update time >= interval**. Additional argument setted on <i>true</i> update timer after overload interval.
+Constructor get reference to time function like **millis** or **micros**.
+
+```cpp
+Timer::Timer(unsigned long(*fun_ptr)(void) timer_function_reference = millis)
+```
+
+
+Component function to update internal timer propertie according to time function given in the class constructor.
+
+```cpp
+void Timer::updateTimer() 
+``` 
+
+
+Constant component function to get time value from last **updateTimer()** function call.
+
+```cpp
+const uint64_t Timer::getTimer() const 
+``` 
+
+
+Operator overload to get, when **current time - last update timer >= interval**.<br>
+@param **interval** interval time.<br>
+@param **auto_update_timer** setted on <i>true</i> update timer after overload interval.<br>
+@return current time - last update timer >= interval.
+
+```cpp
+bool Timer::operator() (const uint64_t& interval, const bool& auto_update_timer) 
+``` 
