@@ -8,28 +8,28 @@ class Timer
 public:
   
   /**
-   * Konstruktor klasy Timer. Obiekt służy do reagowania w programie co określony czas.
-   * @param time_function wskaźnik do funkcji, która będzie wykorzystywana do odmierzania czasu. Domyślnie "millis".
-  */
+    * Timer class constructor. The object is used to react in the program at a certain time.
+    * @param time_function pointer to the function that will be used to measure the time. By default, "millis".
+   */
   Timer(TimerFunctionPtr timer_function = millis);
 
   /**
-   * Funkcja składowa resetująca parametr czasu.
-  */
-  void resetTimer();
+    * Component function update the time parameter.
+   */
+  void updateTimer();
 
   /**
-   * Funkcja składowa zwracająca aktualną wartość parametru czasu.
-  */
+    * A component function that returns the current value of the time parameter.
+   */
   const uint64_t& getTimer() const;
 
   /**
-   * Przeciążenia operatora wywołania, co zadany interwał czasu zwraca wartość true.
-   * @param interval interwał czasowy
-   * @param auto_reset_timer ustawienie go na wartość true powoduje automatyczne zresetowanie licznika.
-   * @return zwraca true gdy upłynął czas podany jako argument od ostatniego resetu licznika.
-  */
-  bool operator()(const uint64_t& interval, const bool& auto_reset_timer = false);
+    * Call operator overloads, every given time interval returns true.
+    * @param interval time interval
+    * @param auto_reset_timer setting it to true resets the timer automatically.
+    * @return returns true when the time specified as the argument has elapsed since the last reset of the counter.
+   */
+  bool operator()(const uint64_t& interval, const bool& auto_update_timer = false);
 
 private:
   uint64_t timer;
