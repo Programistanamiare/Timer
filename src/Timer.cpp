@@ -8,7 +8,7 @@ Timer::Timer(TimerFunctionPtr timer_function)
 
 void Timer::updateTimer()
 {
-  this->timer = this->time_f_ptr(); // lol
+  this->timer = this->time_f_ptr();
 }
 
 const uint64_t& Timer::getTimer() const
