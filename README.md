@@ -73,21 +73,24 @@ Constructor get reference to time function like **millis** or **micros**.
 ```cpp
 Timer::Timer(unsigned long(*fun_ptr)(void) timer_function_reference = millis)
 ```
-
+---
+<br>
 
 Component function to update internal timer propertie according to time function given in the class constructor.
 
 ```cpp
 void Timer::updateTimer() 
 ``` 
-
+---
+<br>
 
 Constant component function to get time value from last **updateTimer()** function call.
 
 ```cpp
 const uint64_t Timer::getTimer() const 
 ``` 
-
+---
+<br>
 
 Operator overload to get, when **current time - last update timer >= interval**.<br>
 @param **interval** interval time.<br>
